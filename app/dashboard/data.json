@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "header": "Web Development Resources",
+    "type": "Collection",
+    "status": "Done",
+    "target": "50",
+    "limit": "100",
+    "reviewer": "Sarah Johnson"
+  },
+  {
+    "id": 2,
+    "header": "Design Inspiration Links",
+    "type": "Collection",
+    "status": "In Progress",
+    "target": "75",
+    "limit": "150",
+    "reviewer": "Mike Chen"
+  },
+  {
+    "id": 3,
+    "header": "Productivity Tools",
+    "type": "Collection",
+    "status": "Done",
+    "target": "30",
+    "limit": "50",
+    "reviewer": "Emily Davis"
+  },
+  {
+    "id": 4,
+    "header": "AI & Machine Learning",
+    "type": "Collection",
+    "status": "Not Started",
+    "target": "25",
+    "limit": "75",
+    "reviewer": "Assign reviewer"
+  },
+  {
+    "id": 5,
+    "header": "Marketing Resources",
+    "type": "Collection",
+    "status": "Done",
+    "target": "40",
+    "limit": "80",
+    "reviewer": "Alex Thompson"
+  },
+  {
+    "id": 6,
+    "header": "Business Strategy",
+    "type": "Collection",
+    "status": "In Progress",
+    "target": "60",
+    "limit": "120",
+    "reviewer": "Lisa Wang"
+  },
+  {
+    "id": 7,
+    "header": "Tech News & Updates",
+    "type": "Collection",
+    "status": "Done",
+    "target": "100",
+    "limit": "200",
+    "reviewer": "David Kim"
+  },
+  {
+    "id": 8,
+    "header": "Learning Materials",
+    "type": "Collection",
+    "status": "Not Started",
+    "target": "35",
+    "limit": "90",
+    "reviewer": "Assign reviewer"
+  }
+]

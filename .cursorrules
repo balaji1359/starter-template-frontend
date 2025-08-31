@@ -1,0 +1,83 @@
+# Project Structure Rules
+
+## Directory Structure
+- /pages: All page components (routes) must be defined here
+  - Naming: {feature}-page.tsx
+  - Example: links-page.tsx, collections-page.tsx
+  
+- /components: Reusable UI components
+  - Group by feature/domain in subdirectories
+  - Shared components go directly in /components
+  - Example: /components/links/link-item.tsx
+
+- /hooks: Custom React hooks
+  - Naming: use-{feature}.ts
+  - Example: use-links-store.ts
+
+- /services: API services and external integrations
+  - Naming: {feature}-api.service.ts
+  - Example: links-api.service.ts
+
+- /utils: Utility functions and helpers
+  - Small, pure functions
+  - Example: validation.ts, theme.ts
+
+- /types: TypeScript type definitions
+  - Naming: {feature}.types.ts
+  - Example: link.types.ts
+
+## Coding Standards
+1. No duplicate implementations
+2. No redundant files or components
+3. Group related functionality by feature/domain
+4. Use consistent naming conventions
+5. Keep components focused and single-responsibility
+6. Reuse existing components and utilities
+7. Follow established patterns for new features
+
+## Feature Implementation
+When adding new features:
+1. Check existing components first
+2. Place files in correct directories
+3. Follow naming conventions
+4. Reuse existing patterns
+5. Update types as needed
+6. Add to appropriate service if API integration needed
+
+## State Management
+- Use appropriate store (links, collections, tags)
+- Follow existing patterns for actions and state updates
+- Keep state normalized and avoid duplication
+
+## Component Guidelines
+- Props should use TypeScript interfaces
+- Use consistent styling approach (Tailwind)
+- Follow existing component patterns
+- Keep components focused and manageable
+
+## Import Guidelines
+- Use absolute imports with @/ prefix
+- Group imports logically:
+  1. React and external packages
+  2. Components
+  3. Hooks
+  4. Utils/Types
+  5. Styles (if any)
+
+## File Location Rules
+- New pages -> /pages
+- New components -> /components/{feature}
+- New hooks -> /hooks
+- New services -> /services
+- New types -> /types
+- New utils -> /utils
+
+## Naming Conventions
+- Pages: {feature}-page.tsx
+- Components: PascalCase
+- Hooks: use-{feature}
+- Services: {feature}-api.service.ts
+- Types: {Feature}Props, {Feature}State
+- Utils: camelCase
+
+Remember: When in doubt, follow existing patterns in the codebase. 

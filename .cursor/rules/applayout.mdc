@@ -1,0 +1,123 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# LinkLibrary Project - Cursor Rules
+
+## Project Overview
+This is a modern link management application built with Next.js 14, TypeScript, and Tailwind CSS. It features authentication, collections, tags, and a comprehensive link organization system.
+
+## Tech Stack
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand stores
+- **UI Components**: Custom components with shadcn/ui patterns
+- **Icons**: Lucide React
+- **Authentication**: Custom auth system with Google OAuth
+
+## Code Style & Conventions
+
+### File Naming
+- Use kebab-case for file names: `link-item.tsx`, `auth-layout.tsx`
+- Use PascalCase for component names: `LinkItem`, `AuthLayout`
+- Use camelCase for hooks: `useAuth`, `useLinksStore`
+- Use kebab-case for pages: `login-page.tsx`, `dashboard-page.tsx`
+
+### Component Structure
+- Always use TypeScript with proper type definitions
+- Export components as named exports when possible
+- Use `"use client"` directive for client components
+- Import React types with `import type React from "react"`
+- Use forwardRef for components that need ref forwarding
+
+### TypeScript Patterns
+- Define interfaces for all props and data structures
+- Use `type` for unions and `interface` for object shapes
+- Always type component props with extends React.HTMLAttributes when applicable
+- Use proper generic types for API responses and store states
+
+### Styling Guidelines
+- Use Tailwind CSS exclusively for styling
+- Follow the established color scheme:
+  - Primary: blue-600/blue-700
+  - Secondary: gray-700/gray-600
+  - Background: gray-800/gray-900
+  - Text: white/gray-100/gray-300/gray-400
+- Use backdrop-blur-sm for glass morphism effects
+- Apply consistent hover states with transition-all duration-200
+- Use group/group-hover patterns for interactive elements
+
+### Component Patterns
+- Use the established Button component with variants: primary, secondary, ghost, danger
+- Use the Input component with label, error, and icon props
+- Use the Card, CardHeader, CardContent pattern for containers
+- Implement loading states with the Spinner component
+- Use Tooltip components for interactive elements
+
+### State Management
+- Use Zustand stores for global state (links, collections, tags, auth)
+- Follow the established store patterns with actions and selectors
+- Use React hooks (useState, useEffect) for local component state
+- Implement optimistic updates where appropriate
+
+### API Integration
+- Use the service layer pattern (auth-api.service.ts, links-api.service.ts)
+- Implement proper error handling with try/catch blocks
+- Use toast notifications for user feedback
+- Follow RESTful conventions for API endpoints
+
+### Authentication
+- Use the established auth patterns with useAuth hook
+- Implement proper route protection
+- Handle token management and refresh
+- Support Google OAuth integration
+
+## Specific Patterns to Follow
+
+### Link Management
+- Use LinkItem component for both grid and list views
+- Implement proper tag management with dropdown portals
+- Use LinkThumbnail for consistent favicon/preview display
+- Support drag and drop for link organization
+
+### Collections & Tags
+- Use consistent color schemes for visual organization
+- Implement proper CRUD operations with optimistic updates
+- Support hierarchical organization
+- Use proper validation for names and descriptions
+
+### Layout Components
+- Use AppLayout for authenticated pages
+- Use AuthLayout for authentication pages
+- Implement responsive sidebar with mobile support
+- Use Header component with consistent navigation
+
+### Error Handling
+- Always wrap async operations in try/catch
+- Use toast notifications for user feedback
+- Implement proper loading states
+- Handle network errors gracefully
+
+## Code Quality Rules
+
+### Performance
+- Use React.memo for expensive components
+- Implement proper key props for lists
+- Use useCallback and useMemo where appropriate
+- Lazy load heavy components
+
+### Accessibility
+- Use proper ARIA labels and roles
+- Implement keyboard navigation
+- Use semantic HTML elements
+- Provide proper focus management
+
+### Security
+- Validate all user inputs
+- Sanitize URLs and user content
+- Use proper CORS headers
+- Implement rate limiting where needed
+
+## File Organization
