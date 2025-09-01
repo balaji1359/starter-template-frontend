@@ -30,7 +30,6 @@ interface NavItem {
   collapsible?: boolean
   experimental?: boolean
   showCount?: boolean
-  count?: number
   placeholder?: boolean
 }
 
@@ -176,7 +175,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
             item.placeholder 
               ? "text-muted-foreground cursor-pointer hover:bg-accent/40" 
               : "cursor-pointer text-muted-foreground hover:text-foreground hover:bg-accent/80",
-            shouldHighlight ? "bg-accent-foreground/10 text-foreground" : "",
+
             "transition-[background-color,color] duration-200",
             "h-10",
             isChild && "ml-6"
@@ -205,9 +204,9 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
               )}
             </div>
             <div className="flex items-center gap-1">
-              {item.showCount && item.count !== undefined && (
+              {item.showCount && item.count !== undefined && item.count !== null && (
                 <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full min-w-[28px] text-center">
-                  {item.count}
+                  {item.count || 0}
                 </span>
               )}
             </div>
@@ -322,11 +321,11 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem data-testid="sidebar-profile-link" onClick={() => onSectionChange && onSectionChange("profile")}>
+            <DropdownMenuItem data-testid="sidebar-profile-link" onClick={() => handleSectionChange("profile")}>
               <UserIcon className="mr-2 h-4 w-4" />
               <span>Profile</span>
             </DropdownMenuItem>
-            <DropdownMenuItem data-testid="sidebar-billing-link" onClick={() => onSectionChange && onSectionChange("billing")}>
+            <DropdownMenuItem data-testid="sidebar-billing-link" onClick={() => handleSectionChange("billing")}>
               <DollarSign className="mr-2 h-4 w-4" />
               <span>Billing</span>
 
@@ -334,7 +333,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                 <FlaskConical className="inline w-5 h-5 animate-pulse" />
               </span>
             </DropdownMenuItem>
-            <DropdownMenuItem data-testid="sidebar-settings-link" onClick={() => onSectionChange && onSectionChange("settings")}>
+            <DropdownMenuItem data-testid="sidebar-settings-link" onClick={() => handleSectionChange("settings")}>
               <Settings className="mr-2 h-4 w-4" />
               <span>Settings</span>
 
